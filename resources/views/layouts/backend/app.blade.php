@@ -50,9 +50,9 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="dropdown-title">Logged as {{ Auth::user()->name }}</div>
-                            {{-- <a href="{{ route('admins.show', ['id' => Auth::user()->id]) }}" class="dropdown-item has-icon">
+                            <a href="{{ route('backend.users.show', ['id' => Auth::user()->id]) }}" class="dropdown-item has-icon">
                                 <i class="far fa-user"></i> Profile
-                            </a> --}}
+                            </a>
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt"></i> Logout

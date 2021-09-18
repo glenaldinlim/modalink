@@ -2,10 +2,10 @@
     <li class="menu-header">Main</li>
     <li class="{{ (Request::segment(2) == 'dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.dashboard') }}"><i class="fas fa-fire"></i>&nbsp;<span>Dashboard</span></a></li>
 
-    {{-- <li class="menu-header">Manage HR</li>
-    <li class="{{ (Request::segment(1) == 'admins') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admins.index') }}"><i class="fas fa-user-lock"></i>&nbsp;<span>Administrator</span></a></li>
+    <li class="menu-header">Manage Human Resource</li>
+    <li class="{{ (Request::segment(2) == 'users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.users.index') }}"><i class="fas fa-user-lock"></i>&nbsp;<span>Administrator</span></a></li>
 
-    <li class="menu-header">Manage Customers</li>
+    {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>
     
     <li class="menu-header">Manage Product</li>
