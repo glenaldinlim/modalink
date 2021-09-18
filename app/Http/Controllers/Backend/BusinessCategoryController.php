@@ -61,9 +61,9 @@ class BusinessCategoryController extends Controller
         ])->validate();
 
         $type = BusinessCategory::create([
-            'name' => ucwords($request->get('category_name')),
-            'initial' => $request->get('category_initial'),
-            'slug' => \Str::slug($request->get('category_name'), '-'),
+            'name'      => ucwords($request->get('category_name')),
+            'initial'   => $request->get('category_initial'),
+            'slug'      => \Str::slug($request->get('category_name'), '-'),
         ]);
 
         return redirect()->route('backend.businesses.categories.index')->with('success', 'Successful Added New Business Category!');
