@@ -5,6 +5,9 @@
     <li class="menu-header">Manage Human Resource</li>
     <li class="{{ (Request::segment(2) == 'users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.users.index') }}"><i class="fas fa-user-lock"></i>&nbsp;<span>Administrator</span></a></li>
 
+    <li class="menu-header">Manage Services</li>
+    <li class="{{ (Request::segment(3) == 'types') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.businesses.types.index') }}"><i class="fas fa-bullseye"></i>&nbsp;<span>Type</span></a></li>
+    
     {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>
     
