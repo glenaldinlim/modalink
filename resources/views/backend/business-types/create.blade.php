@@ -5,7 +5,7 @@
         <div class="section-header">
             <h1>Add New Business Type</h1>
         </div>
-        <form action="{{ route('backend.businesses.types.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('backend.businesses.types.store') }}" method="POST">
             @csrf
             <div class="card">
                 <div class="card-body m-3">
