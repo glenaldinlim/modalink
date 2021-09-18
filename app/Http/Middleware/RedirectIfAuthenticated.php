@@ -24,11 +24,11 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 if (Auth::user()->role_name == 'Investor') {
-                    return redirect(RouteServiceProvider::HOME);
+                    return redirect(RouteServiceProvider::INVESTOR_HOME);
                 } else if (Auth::user()->role_name == 'Merchant') {
-                    return redirect(RouteServiceProvider::MERCHANT);
+                    return redirect(RouteServiceProvider::MERCHANT_HOME);
                 } else if (Auth::user()->role_name == 'Bod' || Auth::user()->role_name == 'Webmaster' || Auth::user()->role_name == 'Admin') {
-                    return redirect(RouteServiceProvider::DASHBOARD);
+                    return redirect(RouteServiceProvider::ADMIN_HOME);
                 }
             }
         }
