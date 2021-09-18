@@ -7,6 +7,7 @@
 
     <li class="menu-header">Manage Services</li>
     <li class="{{ (Request::segment(3) == 'types') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.businesses.types.index') }}"><i class="fas fa-bullseye"></i>&nbsp;<span>Type</span></a></li>
+    <li class="{{ (Request::segment(3) == 'categories') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.businesses.categories.index') }}"><i class="fas fa-tag"></i>&nbsp;<span>Category</span></a></li>
     
     {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>

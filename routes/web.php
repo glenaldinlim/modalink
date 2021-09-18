@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\BusinessTypeController;
+use App\Http\Controllers\Backend\BusinessCategoryController;
 use App\Http\Controllers\Frontend\Investor\HomeInvestorController;
 use App\Http\Controllers\Frontend\Merchant\HomeMerchantController;
 
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
 
     Route::group(['prefix' => 'businesses', 'as' => 'businesses.'], function () {
         Route::resource('types', BusinessTypeController::class)->except(['show'])->parameters(['types' => 'id']);
+        Route::resource('categories', BusinessCategoryController::class)->except(['show'])->parameters(['categories' => 'id']);
     });
 });
 
