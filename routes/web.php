@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
 use App\Http\Controllers\Backend\BusinessTypeController;
 use App\Http\Controllers\Backend\BusinessCategoryController;
+use App\Http\Controllers\Backend\VerificationStatusController;
 use App\Http\Controllers\Frontend\Investor\HomeInvestorController;
 use App\Http\Controllers\Frontend\Merchant\HomeMerchantController;
 
@@ -50,6 +51,10 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
         });
 
         Route::resource('statuses', StatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
+
+        Route::group(['prefix' => 'verification', 'as' => 'verification.'], function () {
+            Route::resource('statuses', VerificationStatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
+        });
     });
 });
 
