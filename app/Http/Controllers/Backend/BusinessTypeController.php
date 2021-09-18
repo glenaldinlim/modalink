@@ -109,7 +109,7 @@ class BusinessTypeController extends Controller
 
         $type = BusinessType::findOrFail($id);
         $type->name   = ucwords($request->get('type_name'));
-        $type->option = $request->get('status_option');
+        $type->status = $request->get('status_option');
         $type->save();
 
         return redirect()->route('backend.businesses.types.index')->with('success', 'Successful Updated Business Type!');
