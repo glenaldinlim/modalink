@@ -144,11 +144,6 @@ class UserController extends Controller
             $user = User::findOrFail($id);
             $user->delete();
 
-            UserActivity::create([
-                'user_id'       => \Auth::user()->id,
-                'description'   => 'Deleted Administrator '.$user->fullname
-            ]);
-
             return redirect()->route('admins.index')->with('success', 'Successful Deleted Administrator!');
         }
 
