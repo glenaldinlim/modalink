@@ -56,8 +56,8 @@ class BusinessCategoryController extends Controller
     public function store(Request $request)
     {
         $validation = \Validator::make($request->all(), [
-            'category_name' => 'required|min:5|max:200|unique:business_categories,name',
-            'category_initial' => 'nullable|max:10',
+            'category_name'     => 'required|min:5|max:200|unique:business_categories,name',
+            'category_initial'  => 'nullable|max:10',
         ])->validate();
 
         $type = BusinessCategory::create([
