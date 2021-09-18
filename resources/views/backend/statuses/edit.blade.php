@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Edit Business Type</h1>
+            <h1>Edit Status</h1>
         </div>
         <form action="{{ route('backend.statuses.update', ['id' => $status->id]) }}" method="POST">
             @csrf

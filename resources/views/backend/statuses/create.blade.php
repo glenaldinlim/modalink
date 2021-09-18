@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Add New Business Type</h1>
+            <h1>Add New Status</h1>
         </div>
         <form action="{{ route('backend.statuses.store') }}" method="POST">
             @csrf
