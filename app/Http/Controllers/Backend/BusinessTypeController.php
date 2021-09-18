@@ -123,8 +123,8 @@ class BusinessTypeController extends Controller
      */
     public function destroy($id)
     {
-        $businessTypes = BusinessTypes::findOrFail($id);
-        $businessTypes->delete();
+        $businessType = BusinessType::findOrFail($id);
+        $businessType->delete();
 
         return redirect()->route('backend.businesses.types.index')->with('success', 'Successful Deleted Business Type!');
     }
