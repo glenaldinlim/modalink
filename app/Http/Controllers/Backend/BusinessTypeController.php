@@ -16,7 +16,7 @@ class BusinessTypeController extends Controller
     public function __construct()
     {
         $this->middleware('role:webmaster|admin');
-        $this->middleware('auth')->except(['create', 'edit', 'update', 'destroy']);
+        $this->middleware('auth')->except(['create', 'show', 'store', 'edit', 'update', 'destroy']);
     }
 
     /**
