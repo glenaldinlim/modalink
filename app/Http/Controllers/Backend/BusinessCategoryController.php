@@ -16,7 +16,7 @@ class BusinessCategoryController extends Controller
     public function __construct()
     {
         $this->middleware('role:webmaster|admin');
-        $this->middleware('auth')->except(['create', 'store', 'edit', 'update', 'destroy']);
+        $this->middleware('auth')->except(['create', 'show', 'store', 'edit', 'update', 'destroy']);
     }
 
     /**
