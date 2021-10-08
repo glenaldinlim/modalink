@@ -33,53 +33,36 @@
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
 </head>
 
-<body>
+<body class="layout-3">
     <div id="app">
-        <div class="main-wrapper main-wrapper-1">
-            <!-- Navbar -->
+        <div class="main-wrapper container">
             <div class="navbar-bg"></div>
             <nav class="navbar navbar-expand-lg main-navbar">
-                <ul class="navbar-nav mr-auto">
-                    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-                </ul>
-                <ul class="navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="{{ asset('storage/'.Auth::user()->avatar) }}" class="rounded-circle mr-1">
-                            <div class="d-sm-none d-lg-inline-block">{{ Auth::user()->name }}</div>
-                        </a>
+                <a href="index.html" class="ml-5 navbar-brand sidebar-gone-hide">Modalink</a>
+                <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
+                <ul class="navbar-nav navbar-right ml-auto mr-5">
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                        <img alt="image" src="{{ asset('storage/'.Auth::user()->avatar) }}" class="rounded-circle mr-1">
+                        <div class="d-sm-none d-lg-inline-block">{{ Auth::user()->name }}</div></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <div class="dropdown-title">Logged as {{ Auth::user()->name }}</div>
-                            {{-- <a href="{{ route('admins.show', ['id' => Auth::user()->id]) }}" class="dropdown-item has-icon">
-                                <i class="far fa-user"></i> Profile
-                            </a> --}}
-                            <div class="dropdown-divider"></div>
-                            <a href="{{ route('logout') }}" class="dropdown-item has-icon text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                            <a href="features-profile.html" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Akun
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Keluar
+                            </a>
                         </div>
                     </li>
                 </ul>
             </nav>
 
-            <!-- Sidebar -->
-            <div class="main-sidebar sidebar-style-2">
-                <aside id="sidebar-wrapper">
-                    <!-- Sidebar Brand -->
-                    <div class="sidebar-brand">
-                        <a href="#">Modalink</a>
-                    </div>
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="#">M</a>
-                    </div>
-
-                    <!-- Sidebar Menu -->
+            <!-- Top Nav -->
+            <nav class="navbar navbar-secondary navbar-expand-lg">
+                <div class="container">
                     @include('layouts.frontend.investors.partial.navbar')
-                </aside>
-            </div>
+                </div>
+            </nav>
 
             <!-- Main Content -->
             <div class="main-content">
