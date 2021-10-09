@@ -33,8 +33,8 @@
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $merchant->name }}</td>
-                                            <td>{{ $merchant->business_type_id }}</td>
-                                            <td>{{ $merchant->status_id }}</td>
+                                            <td>{{ $merchant->businessCategory->name }}</td>
+                                            <td>{{ $merchant->status->name }}</td>
                                             <td>{{ $merchant->created_at }}</td>
                                             <td>
                                                 <a href="{{ route('backend.merchants.edit', ['id' => $merchant->id]) }}" class="btn btn-info text-white btn-sm"> <i class="fas fa-edit"></i></a>

@@ -34,11 +34,11 @@
                                             </div>
                                             <div class="information">
                                                 <b>Type</b>
-                                                <p>{{ $merchant->business_type_id }}</p>
+                                                <p>{{ $merchant->businessType->name }}</p>
                                             </div>
                                             <div class="information">
                                                 <b>Sector</b>
-                                                <p>{{ $merchant->business_category_id }}</p>
+                                                <p>{{ $merchant->businessCategory->name }}</p>
                                             </div>
                                         </div>
                                         <div class="col-lg-8 col-md-6 col-sm-6 col-12">
@@ -51,11 +51,11 @@
                                             </div>
                                             <div class="information">
                                                 <b>Status</b>
-                                                <p>{{ $merchant->status_id }}</p>
+                                                <p>{{ $merchant->status->name }}</p>
                                             </div>
                                             <div class="information">
                                                 <b>Verification Status</b>
-                                                <p>{{ $merchant->verification_status_id }}</p>
+                                                <p>{{ $merchant->verificationStatus->name }}</p>
                                             </div>
                                         </div>
                                     </div>
