@@ -20,4 +20,9 @@ class BusinessCategory extends Model
         'slug',
         'status',
     ];
+
+    public function merchants()
+    {
+        return $this->hasMany(Merchant::class);
+    }
 }

@@ -18,4 +18,9 @@ class Status extends Model
         'name',
         'description',
     ];
+
+    public function merchants()
+    {
+        return $this->hasMany(Merchant::class);
+    }
 }

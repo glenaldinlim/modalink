@@ -31,7 +31,8 @@ class MerchantController extends Controller
      */
     public function index()
     {
-        $merchants = Merchant::all();
+        $merchants = Merchant::with(['status', 'businessCategory'])->get();
+        // $merchants = Merchant::all();
 
         return view('backend.merchants.index', [
             'title' => 'Merchant',

@@ -18,4 +18,9 @@ class BusinessType extends Model
         'name',
         'status',
     ];
+
+    public function merchants()
+    {
+        return $this->hasMany(Merchant::class);
+    }
 }

@@ -28,4 +28,24 @@ class Merchant extends Model
         'status_id',
         'verification_status_id',
     ];
+
+    public function businessCategory()
+    {
+        return $this->belongsTo(BusinessCategory::class);
+    }
+
+    public function businessType()
+    {
+        return $this->belongsTo(BusinessType::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function verificationStatus()
+    {
+        return $this->belongsTo(VerificationStatus::class);
+    }
 }
