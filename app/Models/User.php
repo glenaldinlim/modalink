@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->created_at)->format('M Y');
     }
+
+    public function merchants()
+    {
+        return $this->hasMany(Merchant::class);
+    }
 }

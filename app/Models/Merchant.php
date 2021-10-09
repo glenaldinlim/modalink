@@ -48,4 +48,9 @@ class Merchant extends Model
     {
         return $this->belongsTo(VerificationStatus::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
