@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
+use App\Http\Controllers\Backend\MerchantController;
 use App\Http\Controllers\Backend\BusinessTypeController;
 use App\Http\Controllers\Backend\BusinessCategoryController;
 use App\Http\Controllers\Backend\VerificationStatusController;
@@ -56,5 +57,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
             Route::resource('statuses', VerificationStatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
         });
     });
+
+    Route::resource('merchants', MerchantController::class)->parameters(['merchants' => 'id']);
 });
 
