@@ -58,6 +58,8 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
         });
     });
 
+    Route::get('merchants/{id}/verifications', [MerchantController::class, 'showVerificationStatusView'])->name('merchants.verifications.edit');
+    Route::put('merchants/{id}/verifications', [MerchantController::class, 'updateVerificationStatus'])->name('merchants.verifications.update');
     Route::resource('merchants', MerchantController::class)->parameters(['merchants' => 'id']);
 });
 

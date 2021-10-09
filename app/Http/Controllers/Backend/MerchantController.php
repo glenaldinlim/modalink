@@ -178,4 +178,37 @@ class MerchantController extends Controller
     {
         //
     }
+
+    public function showVerificationStatusView($id)
+    {
+        $merchant = Merchant::findOrFail($id);
+        $verificationStatuses = VerificationStatus::all();
+
+        if($merchant->verification_status_id <> 1 && $merchant->verification_status_id != 3) {
+            return view('backend.merchants.verifications.edit', [
+                'title'                 => 'Merchant',
+                'merchant'              => $merchant,
+                'verificationStatuses'  => $verificationStatuses,
+            ]);
+        }
+        return redirect()->route('backend.merchants.show', ['id' => $id])->with('danger', 'Oops, tidak ada yang perlu diverifikasi!');
+    }
+
+    public function updateVerificationStatus($id)
+    {
+        if($merchant->verification_status_id <> 1 && $merchant->verification_status_id != 3) {
+            $validation = \Validator::make($request->all(), [
+                'verification_status' => 'required|regex:/^[0-9]*$/',
+            ])->validate();
+
+            $merchant = Merchant::whereId($id)
+                                ->update([
+                                    'verification_status_id' => $request->get('verification_status'),
+                                ]);
+
+            return redirect()->route('backend.merchants.show', ['id' => $id])->with('success', 'Successful Updated Verification Status Merchant!');
+        }
+
+        return redirect()->route('backend.merchants.show', ['id' => $id])->with('danger', 'Oops, tidak ada yang perlu diverifikasi!');
+    }
 }
