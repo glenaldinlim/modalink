@@ -60,7 +60,7 @@ class BusinessCategoryController extends Controller
             'category_initial'  => 'nullable|max:10',
         ])->validate();
 
-        $type = BusinessCategory::create([
+        $businessCategory = BusinessCategory::create([
             'name'      => ucwords($request->get('category_name')),
             'initial'   => $request->get('category_initial'),
             'slug'      => \Str::slug($request->get('category_name'), '-'),
@@ -88,11 +88,11 @@ class BusinessCategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = BusinessCategory::findOrFail($id);
+        $businessCategory = BusinessCategory::findOrFail($id);
 
         return view('backend.business-categories.edit', [
             'title'     => 'Business Category',
-            'category'  => $category,
+            'category'  => $businessCategory,
         ]);
     }
 
@@ -111,11 +111,11 @@ class BusinessCategoryController extends Controller
             'status_option'     => 'required|boolean',
         ])->validate();
 
-        $type = BusinessCategory::findOrFail($id);
-        $type->name     = ucwords($request->get('category_name'));
-        $type->initial  = $request->get('category_initial');
-        $type->status   = $request->get('status_option');
-        $type->save();
+        $businessCategory = BusinessCategory::findOrFail($id);
+        $businessCategory->name     = ucwords($request->get('category_name'));
+        $businessCategory->initial  = $request->get('category_initial');
+        $businessCategory->status   = $request->get('status_option');
+        $businessCategory->save();
 
         return redirect()->route('backend.businesses.categories.index')->with('success', 'Successful Updated Business Category!');
     }
