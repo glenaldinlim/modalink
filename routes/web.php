@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\BankController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
@@ -61,5 +62,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
     Route::get('merchants/{id}/verifications', [MerchantController::class, 'showVerificationStatusView'])->name('merchants.verifications.edit');
     Route::put('merchants/{id}/verifications', [MerchantController::class, 'updateVerificationStatus'])->name('merchants.verifications.update');
     Route::resource('merchants', MerchantController::class)->parameters(['merchants' => 'id']);
+
+    Route::resource('banks', BankController::class)->except(['show'])->parameters(['banks' => 'id']);
 });
 

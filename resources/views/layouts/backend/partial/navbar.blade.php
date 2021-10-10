@@ -13,6 +13,9 @@
     
     <li class="menu-header">Manage Partner</li>
     <li class="{{ (Request::segment(2) == 'merchants') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.merchants.index') }}"><i class="fas fa-store"></i>&nbsp;<span>Merchant</span></a></li>
+    
+    <li class="menu-header">Manage Payment</li>
+    <li class="{{ (Request::segment(2) == 'banks') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.banks.index') }}"><i class="fas fa-university"></i>&nbsp;<span>Bank</span></a></li>
 
     {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>
