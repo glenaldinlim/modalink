@@ -32,9 +32,9 @@
                                     @foreach ($paymentMethods as $method)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $method->bank_id }}</td>
+                                            <td>{{ $method->bank->name }}</td>
                                             <td>{{ $method->account_number }} a/n {{ $method->alias_name }}</td>
-                                            <td>{{ $method->user_id }}</td>
+                                            <td>{{ $method->user->name }}</td>
                                             <td><span class="badge {{ $method->status == 1 ? 'badge-success' : 'badge-danger' }}">{{ $method->status == 1 ? 'Active' : 'Inactive' }}</span></td>
                                             <td>
                                                 <a href="{{ route('backend.payments.methods.edit', ['id' => $method->id]) }}" class="btn btn-info text-white btn-sm"> <i class="fas fa-edit"></i></a>

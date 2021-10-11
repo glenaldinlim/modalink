@@ -17,7 +17,7 @@ class PaymentMethodController extends Controller
      */
     public function index()
     {
-        $paymentMethods = PaymentMethod::all();
+        $paymentMethods = PaymentMethod::with(['bank', 'user'])->get();
 
         return view('backend.payment-methods.index', [
             'title'             => 'Payment Method',
