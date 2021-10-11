@@ -16,6 +16,7 @@
     
     <li class="menu-header">Manage Payment</li>
     <li class="{{ (Request::segment(2) == 'banks') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.banks.index') }}"><i class="fas fa-university"></i>&nbsp;<span>Bank</span></a></li>
+    <li class="{{ (Request::segment(3) == 'methods') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.payments.methods.index') }}"><i class="fas fa-credit-card"></i>&nbsp;<span>Method</span></a></li>
 
     {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>

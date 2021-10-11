@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
 use App\Http\Controllers\Backend\MerchantController;
 use App\Http\Controllers\Backend\BusinessTypeController;
+use App\Http\Controllers\Backend\PaymentMethodController;
 use App\Http\Controllers\Backend\BusinessCategoryController;
 use App\Http\Controllers\Backend\VerificationStatusController;
 use App\Http\Controllers\Frontend\Investor\HomeInvestorController;
@@ -64,5 +65,9 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
     Route::resource('merchants', MerchantController::class)->parameters(['merchants' => 'id']);
 
     Route::resource('banks', BankController::class)->except(['show'])->parameters(['banks' => 'id']);
+    
+    Route::group(['prefix' => 'payments', 'as' => 'payments.'], function () {
+        Route::resource('methods', PaymentMethodController::class)->except(['show'])->parameters(['methods' => 'id']);
+    });
 });
 
