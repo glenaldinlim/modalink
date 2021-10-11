@@ -19,4 +19,9 @@ class Bank extends Model
         'logo',
         'status',
     ];
+
+    public function paymentMethods()
+    {
+        return $this->hasMany(PaymentMethod::class);
+    }
 }

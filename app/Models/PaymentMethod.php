@@ -21,4 +21,14 @@ class PaymentMethod extends Model
         'alias_name',
         'status',
     ];
+
+    public function bank()
+    {
+        return $this->belongsTo(Bank::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
