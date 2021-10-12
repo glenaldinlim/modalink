@@ -20,6 +20,7 @@
 
     <li class="menu-header">Manage Funding</li>
     <li class="{{ (Request::segment(3) == 'types') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.funds.types.index') }}"><i class="fas fa-bullseye"></i>&nbsp;<span>Fund Type</span></a></li>
+    <li class="{{ (Request::segment(2) == 'funds' && Request::segment(3) == 'statuses') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.funds.statuses.index') }}"><i class="fas fa-clipboard"></i>&nbsp;<span>Fund Status</span></a></li>
 
     {{-- <li class="menu-header">Manage Customers</li>
     <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>

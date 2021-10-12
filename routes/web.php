@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
 use App\Http\Controllers\Backend\FundTypeController;
 use App\Http\Controllers\Backend\MerchantController;
+use App\Http\Controllers\Backend\FundStatusController;
 use App\Http\Controllers\Backend\BusinessTypeController;
 use App\Http\Controllers\Backend\PaymentMethodController;
 use App\Http\Controllers\Backend\BusinessCategoryController;
@@ -73,6 +74,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
 
     Route::group(['prefix' => 'funds', 'as' => 'funds.'], function () {
         Route::resource('types', FundTypeController::class)->except(['show'])->parameters(['types' => 'id']);
+        Route::resource('statuses', FundStatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
     });  
 });
 
