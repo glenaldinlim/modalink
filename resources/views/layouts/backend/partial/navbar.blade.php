@@ -8,7 +8,7 @@
     <li class="menu-header">Manage Service</li>
     <li class="{{ (Request::segment(4) == 'types') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.businesses.types.index') }}"><i class="fas fa-bullseye"></i>&nbsp;<span>Business Type</span></a></li>
     <li class="{{ (Request::segment(4) == 'categories') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.businesses.categories.index') }}"><i class="fas fa-tag"></i>&nbsp;<span>Business Category</span></a></li>
-    <li class="{{ (Request::segment(3) == 'statuses') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.statuses.index') }}"><i class="fas fa-toggle-on"></i>&nbsp;<span>Status</span></a></li>
+    <li class="{{ (Request::segment(2) == 'services' && Request::segment(3) == 'statuses') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.statuses.index') }}"><i class="fas fa-toggle-on"></i>&nbsp;<span>Status</span></a></li>
     <li class="{{ (Request::segment(3) == 'verification') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.verification.statuses.index') }}"><i class="fas fa-clipboard"></i>&nbsp;<span>Verification Status</span></a></li>
     
     <li class="menu-header">Manage Partner</li>
