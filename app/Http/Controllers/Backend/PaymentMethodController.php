@@ -11,6 +11,17 @@ use App\Http\Controllers\Controller;
 class PaymentMethodController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('role:webmaster|admin');
+        $this->middleware('auth')->except(['create', 'show', 'store', 'edit', 'update', 'destroy']);
+    }
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
