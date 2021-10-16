@@ -21,14 +21,5 @@
     <li class="menu-header">Manage Funding</li>
     <li class="{{ (Request::segment(3) == 'types') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.funds.types.index') }}"><i class="fas fa-bullseye"></i>&nbsp;<span>Fund Type</span></a></li>
     <li class="{{ (Request::segment(2) == 'funds' && Request::segment(3) == 'statuses') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.funds.statuses.index') }}"><i class="fas fa-clipboard"></i>&nbsp;<span>Fund Status</span></a></li>
-
-    {{-- <li class="menu-header">Manage Customers</li>
-    <li class="{{ (Request::segment(1) == 'customers') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customers.index') }}"><i class="fas fa-users"></i>&nbsp;<span>Customer</span></a></li>
-    
-    <li class="menu-header">Manage Product</li>
-    <li class="{{ (Request::segment(1) == 'categories') ? 'active' : '' }}"><a class="nav-link" href="{{ route('categories.index') }}"><i class="fas fa-tag"></i>&nbsp;<span>Category</span></a></li>
-    <li class="{{ (Request::segment(1) == 'subcategories') ? 'active' : '' }}"><a class="nav-link" href="{{ route('subcategories.index') }}"><i class="fas fa-tags"></i>&nbsp;<span>Subcategory</span></a></li>
-    <li class="{{ (Request::segment(1) == 'units') ? 'active' : '' }}"><a class="nav-link" href="{{ route('units.index') }}"><i class="fas fa-square"></i>&nbsp;<span>Unit</span></a></li>
-    <li class="{{ (Request::segment(1) == 'processes') ? 'active' : '' }}"><a class="nav-link" href="{{ route('processes.index') }}"><i class="fas fa-project-diagram"></i>&nbsp;<span>Process</span></a></li>
-    <li class="{{ (Request::segment(1) == 'products') ? 'active' : '' }}"><a class="nav-link" href="{{ route('products.index') }}"><i class="fas fa-box"></i>&nbsp;<span>Product</span></a></li> --}}
+    <li class="{{ (Request::segment(2) == 'funds' && Request::segment(3) == 'purchases' && Request::segment(4) == 'statuses') ? 'active' : '' }}"><a class="nav-link" href="{{ route('backend.funds.purchases.statuses.index') }}"><i class="fas fa-file-invoice-dollar"></i>&nbsp;<span>Purchases Status</span></a></li>
 </ul>
