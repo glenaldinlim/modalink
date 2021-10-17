@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\BankController;
+use App\Http\Controllers\Backend\FundController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\StatusController;
@@ -78,6 +79,7 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
         Route::group(['prefix' => 'purchases', 'as' => 'purchases.'], function () {
             Route::resource('statuses', FundStatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
         });
+        Route::resource('/', FundController::class)->parameters(['' => 'id']);
     });  
 });
 
