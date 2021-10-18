@@ -26,4 +26,19 @@ class Fund extends Model
         'price_per_unit',
         'fund_status_id',
     ];
+
+    public function merchant()
+    {
+        return $this->belongsTo(Merchant::class);
+    }
+
+    public function fundType()
+    {
+        return $this->belongsTo(fundType::class);
+    }
+
+    public function fundStatus()
+    {
+        return $this->belongsTo(fundStatus::class);
+    }
 }

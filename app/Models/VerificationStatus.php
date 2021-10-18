@@ -23,4 +23,9 @@ class VerificationStatus extends Model
     {
         return $this->hasMany(Merchant::class);
     }
+
+    public function userCredential()
+    {
+        return $this->hasMany(UserCredential::class);
+    }
 }

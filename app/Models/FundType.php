@@ -18,4 +18,9 @@ class FundType extends Model
         'name',
         'status',
     ];
+
+    public function funds()
+    {
+        return $this->hasMany(Fund::class);
+    }
 }

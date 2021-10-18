@@ -18,4 +18,9 @@ class PurchaseStatus extends Model
         'name',
         'description',
     ];
+
+    public function fundDetails()
+    {
+        return $this->hasMany(FundDetail::class);
+    }
 }

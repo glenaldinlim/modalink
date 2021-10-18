@@ -19,7 +19,22 @@ class FundDetail extends Model
         'user_id',
         'payment_method_id',
         'unit',
-        'purchase_status',
+        'purchase_status_id',
         'verification_by',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function purchaseStatus()
+    {
+        return $this->belongsTo(PurchaseStatus::class);
+    }
+
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
 }

@@ -70,4 +70,19 @@ class User extends Authenticatable
     {
         return $this->hasOne(userCredential::class);
     }
+
+    public function userBankAccount()
+    {
+        return $this->hasOne(UserBankAccount::class);
+    }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    public function fundDetails()
+    {
+        return $this->hasMany(FundDetail::class);
+    }
 }

@@ -26,4 +26,19 @@ class UserCredential extends Model
         'status_id',
         'verification_status_id',
     ];
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function verificationStatus()
+    {
+        return $this->belongsTo(VerificationStatus::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

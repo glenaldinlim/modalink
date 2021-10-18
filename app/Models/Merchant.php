@@ -53,4 +53,9 @@ class Merchant extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function funds()
+    {
+        return $this->hasMany(Fund::class);
+    }
 }

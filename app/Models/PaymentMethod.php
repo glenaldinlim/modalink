@@ -31,4 +31,9 @@ class PaymentMethod extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function fundDetails()
+    {
+        return $this->hasMany(FundDetail::class);
+    }
 }

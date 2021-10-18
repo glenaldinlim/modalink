@@ -18,4 +18,9 @@ class FundStatus extends Model
         'name',
         'description',
     ];
+
+    public function funds()
+    {
+        return $this->hasMany(Fund::class);
+    }
 }
