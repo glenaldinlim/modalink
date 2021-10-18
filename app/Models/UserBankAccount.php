@@ -21,4 +21,9 @@ class UserBankAccount extends Model
         'account_number',
         'alias_name',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
