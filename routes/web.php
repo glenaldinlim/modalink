@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\FundStatusController;
 use App\Http\Controllers\Backend\BusinessTypeController;
 use App\Http\Controllers\Backend\PaymentMethodController;
 use App\Http\Controllers\Backend\BusinessCategoryController;
+use App\Http\Controllers\Frontend\Investor\ProfileController;
 use App\Http\Controllers\Backend\VerificationStatusController;
 use App\Http\Controllers\Frontend\Investor\HomeInvestorController;
 use App\Http\Controllers\Frontend\Merchant\HomeMerchantController;
@@ -34,6 +35,13 @@ Auth::routes(['register' => 0]);
 
 Route::group(['prefix' => 'my', 'as' => 'front.investor.', 'middleware' => ['auth', 'role:investor']], function () {
     Route::get('/home', [HomeInvestorController::class, 'index'])->name('home');
+
+    Route::group(['prefix' => 'profiles', 'as' => 'profiles.'], function () {
+        Route::get('/', [ProfileController::class, 'index'])->name('index');
+        Route::put('/{id}/biodata', [ProfileController::class, 'updateBiodata'])->name('biodata');
+        Route::put('/{id}/bank', [ProfileController::class, 'updatebank'])->name('bank');
+        Route::put('/{id}/setting', [ProfileController::class, 'updatesetting'])->name('setting');
+    });
 });
 
 Route::group(['prefix' => 'merchant', 'as' => 'front.merchant.', 'middleware' => ['auth', 'role:merchant']], function () {
@@ -80,6 +88,6 @@ Route::group(['prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 
             Route::resource('statuses', FundStatusController::class)->except(['show'])->parameters(['statuses' => 'id']);
         });
         Route::resource('/', FundController::class)->parameters(['' => 'id']);
-    });  
+    });
 });
 
